@@ -170,8 +170,12 @@ export default {
 <template>
   <table class="table">
     <thead>
-      <tr>
-        <th v-for="headCell in headers" :key="headCell.id">
+      <tr class="table-head">
+        <th
+          class="table-head__cell"
+          v-for="headCell in headers"
+          :key="headCell.id"
+        >
           <custom-table-head-cell
             @onSort="sortBy"
             @onFilter="setFilter"
@@ -189,10 +193,21 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+.table {
+  border-spacing: 0;
+}
 /* stylelint-disable */
-::v-deep td {
-  border-bottom: thin solid rgba(0, 0, 0, 0.12);
+::v-deep tbody td {
   padding: 8px 16px;
+  border-bottom: thin solid rgba(0, 0, 0, 0.12);
 }
 /* stylelint-enable */
+.table-head {
+  // display: inline-flex;
+
+  &__cell {
+    padding: 0 6px;
+    vertical-align: top;
+  }
+}
 </style>

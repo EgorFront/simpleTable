@@ -137,6 +137,10 @@ export default {
 <style lang="scss">
 @import '~normalize.css/normalize.css';
 
+* {
+  box-sizing: border-box;
+}
+
 #app {
   // TODO: fix vh units on ios
   min-height: 100vh;
