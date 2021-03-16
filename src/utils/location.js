@@ -4,7 +4,7 @@ function addParamUrl(key, value) {
   window.history.replaceState(null, null, url)
 }
 
-function deleteParamUrl(key, value) {
+function deleteParamUrl(key) {
   const url = new URL(window.location.href)
   url.searchParams.delete(key)
   window.history.replaceState(null, null, url)
